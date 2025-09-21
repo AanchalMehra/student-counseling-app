@@ -3,5 +3,7 @@ services:
     name: counseling-app
     env: node
     plan: free
-    buildCommand: "npm install && npm install --prefix client && npm run build --prefix client"
+    # This tells Render that your backend code is in the 'server' folder
+    rootDir: server
+    buildCommand: "npm install && npm install --prefix ../client && npm run build --prefix ../client"
     startCommand: "npm start"
